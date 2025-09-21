@@ -46,7 +46,7 @@ public class StudentInformationSystem {
     static MongoDatabase database;
     static MongoCollection<Document> collection;
 
-    // Connect to MongoDB
+    
     public static void connectDB() {
         String uri ="mongodb+srv://Student:asdfgf123454@cluster0.vu7nama.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
         mongoClient = MongoClients.create(uri);
@@ -54,7 +54,7 @@ public class StudentInformationSystem {
         collection = database.getCollection("students");
     }
 
-    // Add student
+    
     public static void addStudent() {
         System.out.print("Enter Roll No: ");
         int rollNo = sc.nextInt();
@@ -78,7 +78,7 @@ public class StudentInformationSystem {
         System.out.println("Student added successfully!");
     }
 
-    // View students
+    
     public static void viewStudents() {
         MongoCursor<Document> cursor = collection.find().iterator();
         if (!cursor.hasNext()) {
@@ -92,7 +92,7 @@ public class StudentInformationSystem {
         }
     }
 
-    // Search student
+    
     public static void searchStudent() {
         System.out.print("Enter Roll No to search: ");
         int rollNo = sc.nextInt();
@@ -106,7 +106,7 @@ public class StudentInformationSystem {
         }
     }
 
-    // Update student
+    
     public static void updateStudent() {
         System.out.print("Enter Roll No to update: ");
         int rollNo = sc.nextInt();
@@ -134,7 +134,7 @@ public class StudentInformationSystem {
         System.out.println("Student updated successfully!");
     }
 
-    // Delete student
+    
     public static void deleteStudent() {
         System.out.print("Enter Roll No to delete: ");
         int rollNo = sc.nextInt();
@@ -148,7 +148,7 @@ public class StudentInformationSystem {
         }
     }
 
-    // Menu
+    
     public static void menu() {
         int choice;
         do {
